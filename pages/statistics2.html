@@ -1,0 +1,311 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js" integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <title>All Info Diabetes</title>
+        <style>
+            body {
+              background-image: url('statistics.jpg');
+              background-repeat: no-repeat;
+              background-attachment: fixed;  
+              background-size: cover;
+            }
+            </style>
+    </head>
+    <body >
+    <div class="chart-container" style="background-color:#fbe5e0e8; margin:30px; font:roboto;">
+        <br /><h1 style="text-align: center;">Statistics Based On The Survey Collected During The Project </h1><br />
+        
+    <div class="age-pie-chart" style="height:500px; width:500px; display:inline-block; text-align:center">
+        <canvas id="ageChart" style="margin:auto;height:450px; width:450px"></canvas>
+    </div>
+    <script>
+        let ageChart=document.getElementById('ageChart').getContext('2d');
+        let agePieChart=new Chart(ageChart,{
+            type:'pie',
+            data:{
+                labels:['age:0-20','age:21-40','age:41-60','age: 60 & above'],
+                datasets:[{
+                    label:'Distribution of diabetics across various age groups',
+                    data:[ 
+                        30,
+                        40,
+                        10,
+                        60],
+                    backgroundColor:[
+                        'rgba(255,99,132,0.6',
+                        'rgba(54,162,235,0.6',
+                        'rgba(255,206,86,0.6)',
+                        'rgba(75,192,192,0.6)'/* ,
+                        'rgba(153,102,255,0.6)',
+                        'rgba(255,159,64,0.6)',
+                        'rgba(255,99,132,0.6)' */
+                    ],
+                    borderWidth:1,
+                    borderColor:'#777',
+                    hoverBorderWidth:1,
+                    hoverBorderColor:"#000"
+                }]
+            },
+            options:{
+                
+                plugins:{
+                    title:{
+                    display:true,
+                    text:'Distribution of Diabetic people of various ages',
+                    fontSize:30
+                    
+                },
+                legend:{
+                    display:true,
+                    position:'bottom',
+                    labels:{
+                        fontColor:'#000'
+                    }
+                },
+
+                },
+                
+               /*  layout:{
+                    padding:{
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                }, */
+                tooltips:{
+                    enabled:true
+                }
+            }
+        });
+    </script>
+    <div class="gender-container" style="height:500px; width:500px; display:inline-block; text-align:center;">
+        <canvas id="genderChart" style="margin:auto; height:400px; width:400px"></canvas>
+    </div>
+    <script>
+        let genderChart=document.getElementById('genderChart').getContext('2d');
+        let genderBarChart=new Chart(genderChart,{
+            type:'bar',
+            data:{
+                labels:['male','female','others'],
+                datasets:[{
+                    label:'gender',
+                    data:[ 
+                        30,
+                        40,
+                        2],
+                    backgroundColor:[
+                    'rgba(153,102,255,0.6)',
+                        'rgba(255,159,64,0.6)',
+                        'rgba(255,99,132,0.6)'
+                    ],
+                    borderWidth:1,
+                    borderColor:'#777',
+                    hoverBorderWidth:1,
+                    hoverBorderColor:"#000"
+                }]
+            },
+            options:{
+                indexAxis:'y',
+                plugins:{
+                    title:{
+                    display:true,
+                    text:'Gender distribution',
+                    fontSize:25
+                    
+                },
+                /* legend:{
+                    position:'right',
+                    labels:{
+                        fontColor:'#000'
+                    }
+                } */ },
+                /* layout:{
+                    padding:{
+                        left:30,
+                        right:0,
+                        bottom:0,
+                        top:20
+                    }
+                }, */ 
+                tooltips:{
+                    enabled:true
+                }
+            }
+        });
+    </script>
+<div class="inheritance-container" style="height:500px; width:500px; display:inline-block; text-align:center;">
+    <canvas id="inheritanceChart" style="margin:auto; height:400px; width:400px"></canvas>
+</div>
+<script>
+    let inheritanceChart=document.getElementById('inheritanceChart').getContext('2d');
+    let inheritanceBarChart=new Chart(inheritanceChart,{
+        type:'bar',
+        data:{
+            labels:['inherited','not inherited'],
+            datasets:[{
+                label:'inheritance',
+                data:[ 
+                    30,
+                    40],
+                backgroundColor:[
+                    'rgba(75,192,192,0.6)' ,
+                        'rgba(153,102,255,0.6)'
+                ],
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:1,
+                hoverBorderColor:"#000"
+            }]
+        },
+        options:{
+            indexAxis:'y',
+            plugins:{
+                title:{
+                display:true,
+                text:'Role of inheritance in Diabetic people',
+                fontSize:25
+                
+            },
+            /* legend:{
+                position:'right',
+                labels:{
+                    fontColor:'#000'
+                }
+            } */ },
+            /* layout:{
+                padding:{
+                    left:30,
+                    right:0,
+                    bottom:0,
+                    top:20
+                }
+            }, */ 
+            tooltips:{
+                enabled:true
+            }
+        }
+    });
+</script>
+<div class="medication-pie-chart" style="height:500px; width:500px; display:inline-block; text-align:center">
+    <canvas id="medicationChart" style="margin:auto;height:450px; width:450px"></canvas>
+</div>
+<script>
+    let medicationChart=document.getElementById('medicationChart').getContext('2d');
+    let medicationPieChart=new Chart(medicationChart,{
+        type:'pie',
+        data:{
+            labels:['Ayurvedic','Allopathy','Homeopathy'],
+            datasets:[{
+                label:'Medication',
+                data:[ 
+                    30,
+                    40,
+                    10],
+                backgroundColor:[
+                'rgba(75,192,192,0.6)',
+                'rgba(255,159,64,0.6)',
+                    'rgba(153,102,255,0.6)' 
+                ],
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:1,
+                hoverBorderColor:"#000"
+            }]
+        },
+        options:{
+            
+            plugins:{
+                title:{
+                display:true,
+                text:'Type of Medicaiton Followed',
+                fontSize:30
+                
+            },
+            legend:{
+                display:true,
+                position:'bottom',
+                labels:{
+                    fontColor:'#000'
+                }
+            },
+
+            },
+            
+           /*  layout:{
+                padding:{
+                    left:50,
+                    right:0,
+                    bottom:0,
+                    top:0
+                }
+            }, */
+            tooltips:{
+                enabled:true
+            }
+        }
+    });
+</script>
+<div class="BP-container" style="height:500px; width:500px; display:inline-block; text-align:center;">
+    <canvas id="BPChart" style="margin:auto; height:400px; width:400px"></canvas>
+</div>
+<script>
+    let BPChart=document.getElementById('BPChart').getContext('2d');
+    let BPBarChart=new Chart(BPChart,{
+        type:'bar',
+        data:{
+            labels:['High','Normal','low'],
+            datasets:[{
+                label:'Blood Pressure',
+                data:[ 
+                    30,
+                    40,
+                10],
+                backgroundColor:['rgba(255,99,132,0.6',
+                        'rgba(54,162,235,0.6',
+                        'rgba(153,102,255,0.6)'
+                ],
+                borderWidth:1,
+                borderColor:'#777',
+                hoverBorderWidth:1,
+                hoverBorderColor:"#000"
+            }]
+        },
+        options:{
+            indexAxis:'y',
+            plugins:{
+                title:{
+                display:true,
+                text:'Role of Blood Pressure in Diabetic People',
+                fontSize:25
+                
+            },
+            /* legend:{
+                position:'right',
+                labels:{
+                    fontColor:'#000'
+                }
+            } */ },
+            /* layout:{
+                padding:{
+                    left:30,
+                    right:0,
+                    bottom:0,
+                    top:20
+                }
+            }, */ 
+            tooltips:{
+                enabled:true
+            }
+        }
+    });
+</script>
+
+
+    
+</div>
+    
+    
+</body>
+</html>
