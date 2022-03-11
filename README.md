@@ -14,3 +14,5 @@ There is a need to bring awareness among people so that they can avoid situation
 The website helps people in understanding everything about diabetes and helps them in taking care of themselves and guiding them to prevent or fight against this chronic disorder. 
 
 I basically covers doctor list pertaining to Tirupati only and can be extended if included as a real time application
+
+The application is built using HTML and CSS. It is a responsive layout. 
